@@ -1,3 +1,29 @@
 /* 
     General Styles
 */
+
+.changa {
+    font-family: "Changa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+.logo-image {
+    width: 100px;
+    height: 100px;
+}
+
+nav {
+    height:100px;
+}
+
+body {
+    background-image: url(https://images.unsplash.com/photo-1518066000714-58c45f1a2c0a?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8fA%3D%3D);
+    color: linen;
+    font-family: "Changa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
