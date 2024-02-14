@@ -6,6 +6,8 @@ import { BookmarkStar } from "react-bootstrap-icons";
 export const Planets = (props) => {
     const { store, actions } = useContext(Context)
       
+
+
         return (
           <div>
             <div className="container"> 
@@ -20,7 +22,10 @@ export const Planets = (props) => {
                           <p className="card-text"> Gravity: {props.gravity} </p>
                         <div className="low-card">
                           <button type="button" className="btn btn-outline-warning mx-3">Read more</button>
-                          <BookmarkStar className="btn-outline-warning" size={30}/>  
+
+                          <BookmarkStar className="btn-outline-warning" size={30}
+                          onClick={() => actions.newFavorite(props) }/>  
+
                         </div>
                         </div>
                       </div>

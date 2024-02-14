@@ -82,6 +82,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
+			newFavorite: (index) => { 
+				// const store = getStore();
+				const addFavorite = getStore().favorites
+				addFavorite.push(index)
+			setStore ({favorites : addFavorite  })
+
+
+			}, 
 
 		}
 
