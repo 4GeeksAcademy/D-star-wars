@@ -8,7 +8,7 @@ export const Planets = (props) => {
       
         return (
           <div>
-            <div className="container border border-white"> 
+            <div className="container"> 
                 <div className="row">
                 <div className="col">
                         <div className="card" style={{width: "200px", height: "500px", background: "black"}}>

@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			people: [],
+			people: JSON.parse(localStorage.getItem("people")) || [],
 			vehicles: JSON.parse(localStorage.getItem("vehicles")) || [],
 			planets: JSON.parse(localStorage.getItem("planets")) || [],
 			favorites: [],
