@@ -5,7 +5,7 @@ import { BookmarkStar } from "react-bootstrap-icons";
 
 export const People = (props) => {
     const { store, actions } = useContext(Context)
-  
+
   
         return (
           <div>
@@ -20,8 +20,14 @@ export const People = (props) => {
                           <p className="card-text"> Eye color: {props.eye_color} </p> 
                           <p className="card-text"> Gender: {props.gender} </p>
                         <div className="low-card">
-                          <button type="button" className="btn btn-outline-warning mx-3">Read more</button>
-                          <BookmarkStar className="btn-outline-warning" size={30}/>  
+
+                          <Link to={`/singlePerson/${props.id}`}> 
+                          <button type="button" className="btn btn-outline-warning mx-3">  Read more</button>
+                          </Link>
+
+                          <BookmarkStar className="btn-outline-warning" size={30}
+                          onClick={() => actions.newFavorite(props.name) }/>  
+                          
                         </div>
                         </div>
                       </div>

@@ -21,8 +21,14 @@ export const Vehicles = (props) => {
                       <p className="card-text"> Passengers: {props.passengers} </p>
                       <p className="card-text"> Cargo capacity: {props.cargo_capacity} </p>
                     <div className="low-card">
+
+                    <Link to={`/singleVehicle/${props.id}`}> 
                       <button type="button" className="btn btn-outline-warning mx-3">Read more</button>
-                      <BookmarkStar className="btn-outline-warning" size={30}/>  
+                    </Link>
+                    
+                      <BookmarkStar className="btn-outline-warning" size={30}
+                          onClick={() => actions.newFavorite(props.name) }/>  
+                          
                     </div>
                     </div>
                   </div>

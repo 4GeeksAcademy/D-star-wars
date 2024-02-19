@@ -1,9 +1,9 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			people: JSON.parse(localStorage.getItem("people")) || [],
-			vehicles: JSON.parse(localStorage.getItem("vehicles")) || [],
-			planets: JSON.parse(localStorage.getItem("planets")) || [],
+			people: localStorage.getItem("people") && JSON.parse(localStorage.getItem("people")) || [],
+			vehicles: localStorage.getItem("vehicles") && JSON.parse(localStorage.getItem("vehicles")) || [],
+			planets: localStorage.getItem("planets") && JSON.parse(localStorage.getItem("planets")) || [],
 			favorites: [],
 		},
 
@@ -84,13 +84,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			newFavorite: (index) => { 
 				// const store = getStore();
-				const addFavorite = getStore().favorites
+				let addFavorite = getStore().favorites
 				addFavorite.push(index)
+				addFavorite = [...new Set(addFavorite)]
 			setStore ({favorites : addFavorite  })
 
 
 			}, 
 
+
+			removeFromFavorite: (index) => {
+				let updatedFavorites = getStore().favorites
+				updatedFavorites.splice(index, 1)
+				setStore({favorites : updatedFavorites})
+
+			}
+
+				
 		}
 
 	}

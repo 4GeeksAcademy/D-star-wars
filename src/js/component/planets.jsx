@@ -21,10 +21,13 @@ export const Planets = (props) => {
                           <p className="card-text"> Climate: {props.climate} </p> 
                           <p className="card-text"> Gravity: {props.gravity} </p>
                         <div className="low-card">
+              
+                        <Link to={`/singlePlanet/${props.id}`}> 
                           <button type="button" className="btn btn-outline-warning mx-3">Read more</button>
+                        </Link>
 
                           <BookmarkStar className="btn-outline-warning" size={30}
-                          onClick={() => actions.newFavorite(props) }/>  
+                          onClick={() => actions.newFavorite(props.name) }/>  
 
                         </div>
                         </div>

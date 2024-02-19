@@ -1,12 +1,13 @@
 import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { Trash3 } from "react-bootstrap-icons";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context)
 
 	return (
-		<nav className="navbar bg-dark border-bottom border-dark mb-3 " data-bs-theme="dark">
+		<nav className="navbar bg-dark border-bottom border-dark mb-3" data-bs-theme="dark">
 			<Link to="/">
 					<div className="logo-image mt-3 ms-3">
 							<img src="https://cdn.freebiesupply.com/logos/large/2x/star-wars-4-logo-png-transparent.png" className="img-fluid"/> 
@@ -16,9 +17,10 @@ export const Navbar = () => {
 				
 				
 				<div className="dropdown"> 
-					<button className="btn btn-warning dropdown-toggle mb-5 me-3 " type="button" data-bs-toggle="dropdown" aria-expanded="false"> Favorites {store.favorites.length} </button>
+					<button className="btn btn-warning dropdown-toggle mb-5 me-3 " type="button" data-bs-toggle="dropdown" aria-expanded="false"> 
+					Favorites <span className="badge text-dark">{store.favorites.length} </span> </button>
 
-					<ul className="dropdown-menu bg-dark">
+					<ul className="dropdown-menu dropdown-menu-dark">
 					{
 						store.favorites.map((favorites, index) =>
 					
@@ -27,14 +29,19 @@ export const Navbar = () => {
 
 							return (
 
-   					 <li key={index}  className="dropdown-item" > <a className="dropdown-item " href="#" > 
+   					 <li key={index}  className="dropdown-item"> <a className="dropdown-item" href="#" > 
 					 <div> 
-						 {favorites.name}
+						 {favorites} 
+						<span className="ms-3"> <Trash3  onClick={() => actions.removeFromFavorite(index)}
+                                     /> 
+									</span> 
 						</div> 
+						
 						 </a>
 					</li>
 						) })
 					}
+
 
 					</ul> 
 				</div> 
